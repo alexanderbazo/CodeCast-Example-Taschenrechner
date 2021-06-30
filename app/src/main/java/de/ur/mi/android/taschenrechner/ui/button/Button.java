@@ -1,5 +1,10 @@
 package de.ur.mi.android.taschenrechner.ui.button;
 
+/*
+ * Liste aller verfügbaren Buttons für des Tastenfelds. Jedem Button wird eine Kategorie (ButtonType)
+ * und ein Label (= Text auf dem Button) angezeigt. Werte aus diesem Enum werden verwendet, um die
+ * einzelne Views bzw. ViewHolder innerhalb RecyclerView zu initialisieren bzw. zu befüllen.
+ */
 public enum Button {
     BUTTON_ZERO(ButtonType.NUMBER, "0"),
     BUTTON_ONE(ButtonType.NUMBER, "1"),

@@ -2,7 +2,6 @@ package de.ur.mi.android.taschenrechner.ui.numpad;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -14,26 +13,29 @@ import de.ur.mi.android.taschenrechner.ui.button.ButtonType;
 
 public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public final TextView textView;
+    public final android.widget.Button inputButton;
     public final Context context;
     public final OnCLickListener listener;
 
     public NumpadButtonViewHolder(@NonNull View buttonView, Context context, OnCLickListener listener) {
         super(buttonView);
-        this.textView = buttonView.findViewById(R.id.numpad_button);
+        this.inputButton = buttonView.findViewById(R.id.numpad_button);
         this.context = context;
         this.listener = listener;
-        this.textView.setOnClickListener(this);
+        this.inputButton.setOnClickListener(this);
     }
 
     public void bindButton(Button button) {
+        // "Normale" Buttons (Ziffern) werden mit einem Button in Standardfarbe angezeigt. Für alle
+        // anderen Typen wird der Hintergrund des Buttons angepasst, in dem ein anderes Drawable,
+        // hier auf Basis einer Shape-Datei (XML) ausgewählt und als Background-Eigenschaft gesetzt wird.
         if (button.type == ButtonType.OPERATOR) {
-            textView.setBackground(AppCompatResources.getDrawable(context, R.drawable.operator_button_shape));
+            inputButton.setBackground(AppCompatResources.getDrawable(context, R.drawable.operator_button_shape));
         }
         if (button.type == ButtonType.COMMAND) {
-            textView.setBackground(AppCompatResources.getDrawable(context, R.drawable.command_button_shape));
+            inputButton.setBackground(AppCompatResources.getDrawable(context, R.drawable.command_button_shape));
         }
-        textView.setText(button.label);
+        inputButton.setText(button.label);
     }
 
     @Override
