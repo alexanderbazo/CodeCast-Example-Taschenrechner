@@ -1,7 +1,7 @@
 package de.ur.mi.android.taschenrechner.ui.button;
 
 /*
- * Defintion und Repräsentation der Taschenrechnertasten
+ * Definition und Repräsentation der Taschenrechnertasten
  *
  * Innerhalb der Anwendung müssen an verschiedenen Stellen die Tasten des Taschenrechners repräsentiert
  * werden. Auf Ebene der Display-Klasse bzw. konkreter im Kontext des RecyclerView und der verwendeten
