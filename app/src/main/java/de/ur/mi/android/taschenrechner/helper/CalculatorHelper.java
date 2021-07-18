@@ -5,8 +5,8 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 
 /*
-@codecast 4. Verwendung der "exp4j"-Bibliothek | 1. Übersicht
-@url https://tobiasdollhofer.de/TaschenrechnerCast/04-01-Overview.mp3
+@codecast 4. Verwendung der "exp4j"-Bibliothek | 1. Übersicht (default)
+@url https://audiobook.software-engineering.education/codecast/04-01-Overview.mp3
 */
 public class CalculatorHelper {
 
@@ -15,8 +15,8 @@ public class CalculatorHelper {
 
 
     /*
-    @codecast 4. Verwendung der "exp4j"-Bibliothek | 2. Aufbau der Hilfsklasse
-    @url https://tobiasdollhofer.de/TaschenrechnerCast/04-02-Helper.mp3
+    @codecast 4. Verwendung der "exp4j"-Bibliothek | 2. Aufbau der Hilfsklasse (default)
+    @url https://audiobook.software-engineering.education/codecast/04-02-Helper.mp3
     */
     public static String calculate(String expression) {
         String cleanedExpression = cleanExpression(expression);
