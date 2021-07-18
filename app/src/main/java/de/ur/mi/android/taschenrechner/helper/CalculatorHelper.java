@@ -10,7 +10,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
  * Diese Klasse dient der vereinfachten Nutzung der "exp4j"-Bibliothek. Über eine öffentliche,
  * statische Methode kann ein mathematischer Ausdruck in Form eines Strings übergeben werden.
  * In der Methode wird durch den Einsatz verschiedener "exp4j"-Klassen ein Ergebnis für den im String
- * repräsentierten Ausdruck berechnet, der, falls eine korrekte Auswertung des Ausdrucks möglich war,
+ * repräsentierten Ausdruck berechnet, das, falls eine korrekte Auswertung des Ausdrucks möglich war,
  * ebenfalls als String-Variable zurückgegeben wird.
  */
 public class CalculatorHelper {

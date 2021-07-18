@@ -99,12 +99,12 @@ public class Display {
      * Die Display-Klasse: Verarbeiten von Eingaben
      *
      * Durch das Betätigen der "="-Taste lösen die Nutzer*innen das endgültige Auflösen des aktuellen
-     * Terms aus. Dabei soll, abweichen von den anderen Eingaben, ein angepasste Verhalten des
-     * Taschenrechners ausgeführt werden: Wie bei den übrigen Nutzeraktionen wird auch hier das Ergebnis
-     * des aktuellen Terms im Ergebnisfeld angezeigt. Im Anschluss wird der aktuell angezeigte Term
-     * aber zusätzlich durch dieses Ergebnis ersetzt. So kann, aufbauend auf dem berechneten Ergebnis,
+     * Terms aus. Dabei soll, abweichend von den anderen Eingaben, ein angepasste Verhalten des
+     * Taschenrechners ausgeführt werden: Wie bei den übrigen Nutzeraktionen soll auch hier das Ergebnis
+     * des aktuellen Terms berechnet und angezeigt werden. Im Anschluss and die Berechnung wird der
+     * aktuell angezeigte Term durch dieses Ergebnis ersetzt. So kann, aufbauend auf dem berechneten Ergebnis,
      * ein neuer Rechenausdruck eingeben werden. Das Ergebnis fungiert dabei als erste Zahl des neuen
-     * Terms. Auch diese Form der UI-Akualisierung ist in der generischen "update"-Methode dieser
+     * Terms. Auch diese Form der UI-Aktualisierung ist in der generischen "update"-Methode dieser
      * Klasse definiert. Um dieses, vom Standardablauf der Methode abweichenden, Verhalten auszulösen,
      * wird beim Aufruf der Methode "true" als Parameterwert übergeben.
      */
@@ -117,7 +117,7 @@ public class Display {
      *
      * Hier wird der Bereich des UIs aktualisiert, für den die Display-Klasse zuständig ist. In der
      * Methode werden dazu zwei verschiedene Aktualisierungsvorgänge implementiert, die beim Aufrufen
-     * der Methode durch die Auswahl des "clearTerm"-Parameters unterschieden werden könnten.
+     * der Methode durch die Auswahl des "clearTerm"-Parameters unterschieden werden können.
      *
      * Im Normalfall (für "clearTerm" wird der Wert false übergeben), wird auf Basis des aktuell in
      * der Variable "currentTerm" gespeicherten Rechenausdrucks dessen Ergebnis berechnet und im

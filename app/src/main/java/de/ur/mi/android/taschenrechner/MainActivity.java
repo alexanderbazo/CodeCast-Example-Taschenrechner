@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
      * Initialisierung der App
      *
      * Die Initialisierung der App beginnt in der Lifecycle-Methode "onCreate" durch den Aufruf der
-     * Methode initUI. Die eigentliche Referenzierung der verschiedenen UI-Komponenten erfolgt
-     * innerhalb der beiden Klassen Numpad" und "Display", die in dieser Methode initialisiert werden.
+     * Methode initUI. Das eigentliche Setup der verschiedenen UI-Komponenten, der Instanzen der
+     * beiden Klassen "Numpad"" und "Display",  erfolgt in dieser ausgelagerten Methode.
      * "onCreate" wird automatisch im Rahmen des Startvorgangs der App aufgerufen.
      */
     @Override
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
     /*
      *  Initialisierung der App
      *
-     * Diese Methode initialisiert die beiden UI-Komponenten "Numpad" und "Display". Beide Klassen
+     * Die Methode "initUI" initialisiert die beiden UI-Komponenten "Numpad" und "Display". Beide Klassen
      * müssen die jeweils relevanten UI-Elemente, z.B. das RecylcerView mit den Tasten zur Eingabe
      * von Ziffern und Operatoren, kennen, um ihre Aufgaben korrekt erfüllen zu können. Die
      * Referenzierung dieser Elemente erfolgt bereits auf Ebene der Activity. Den Konstruktoren beider
