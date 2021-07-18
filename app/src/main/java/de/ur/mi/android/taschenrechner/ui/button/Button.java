@@ -1,9 +1,19 @@
 package de.ur.mi.android.taschenrechner.ui.button;
 
 /*
- * Liste aller verfügbaren Buttons für des Tastenfelds. Jedem Button wird eine Kategorie (ButtonType)
- * und ein Label (= Text auf dem Button) angezeigt. Werte aus diesem Enum werden verwendet, um die
- * einzelne Views bzw. ViewHolder innerhalb RecyclerView zu initialisieren bzw. zu befüllen.
+ * Defintion und Repräsentation der Taschenrechnertasten
+ *
+ * Innerhalb der Anwendung müssen an verschiedenen Stellen die Tasten des Taschenrechners repräsentiert
+ * werden. Auf Ebene der Display-Klasse bzw. konkreter im Kontext des RecyclerView und der verwendeten
+ * Adapter-Klasse müssen einzelne Views mit der passenden Beschriftung angezeigt werden. Innerhalb der
+ * App müssen dann die jeweils gedrückten Tasten zwischen den Komponenten kommuniziert werden. Die
+ * Werte dieses Enums dienen dazu, alle verfügbaren Tasten für diese Zwecke eindeutig zu beschreiben.
+ * Für jede mögliche Taste wird dabei ein Typ bzw. eine Kategorie sowie die jeweilige Beschriftung
+ * festgehalten. Der Typ dient zur Definition der verschiedenen Arten von Tasten, also der Unterscheidung
+ * von Zifferntasten, Tasten zur Eingabe von mathematischen Operatoren und den zusätzlichen Tasten
+ * zur Auflösung bzw. zum Zurücksetzten des aktuellen Ausdrucks. Ein Enum eignet sich hier besonders,
+ * da dadurch eine fixe Menge an Möglichkeiten definiert werden kann und dabei mit jeder Option
+ * zusätzliche Attribute, wie hier z.B. die Tastenbeschriftung, festgehalten werden kann.
  */
 public enum Button {
     BUTTON_ZERO(ButtonType.NUMBER, "0"),

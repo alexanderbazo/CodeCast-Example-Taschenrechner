@@ -13,13 +13,11 @@ import de.ur.mi.android.taschenrechner.ui.button.Button;
 
 public class NumpadAdapter extends RecyclerView.Adapter<NumpadButtonViewHolder> implements NumpadButtonViewHolder.OnCLickListener {
 
-    public final Context context;
     public final ButtonListener listener;
     // Liste der Buttons für das Tastenfeld in der Reihenfolge, in der diese im Grid-Layout (zeilenweise von links nach rechts) angezeigt werden sollen
     public final Button[] buttons = {Button.BUTTON_SEVEN, Button.BUTTON_EIGHT, Button.BUTTON_NINE, Button.BUTTON_DIVISION, Button.BUTTON_FOUR, Button.BUTTON_FIVE, Button.BUTTON_SIX, Button.BUTTON_MULTIPLICATION, Button.BUTTON_ONE, Button.BUTTON_TWO, Button.BUTTON_THREE, Button.BUTTON_MINUS, Button.BUTTON_ZERO, Button.BUTTON_SEPARATOR, Button.BUTTON_RESULT, Button.BUTTON_PLUS, Button.BUTTON_DELETE};
 
-    public NumpadAdapter(Context context, ButtonListener listener) {
-        this.context = context;
+    public NumpadAdapter(ButtonListener listener) {
         this.listener = listener;
     }
 
@@ -27,7 +25,7 @@ public class NumpadAdapter extends RecyclerView.Adapter<NumpadButtonViewHolder> 
     @Override
     public NumpadButtonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_numpad_button, parent, false);
-        return new NumpadButtonViewHolder(v, context, this);
+        return new NumpadButtonViewHolder(v, parent.getContext(), this);
     }
 
     @Override

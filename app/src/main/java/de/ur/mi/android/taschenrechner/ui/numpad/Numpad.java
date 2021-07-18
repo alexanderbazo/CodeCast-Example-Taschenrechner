@@ -1,7 +1,5 @@
 package de.ur.mi.android.taschenrechner.ui.numpad;
 
-import android.content.Context;
-
 import androidx.recyclerview.widget.RecyclerView;
 
 import de.ur.mi.android.taschenrechner.ui.button.Button;
@@ -21,9 +19,9 @@ public class Numpad implements NumpadAdapter.ButtonListener {
     private Button lastButtonPressed;
     private final NumpadListener listener;
 
-    public Numpad(Context context, RecyclerView view, NumpadListener listener) {
+    public Numpad(RecyclerView view, NumpadListener listener) {
         this.listener = listener;
-        init(context, view);
+        init(view);
     }
 
     /*
@@ -32,8 +30,8 @@ public class Numpad implements NumpadAdapter.ButtonListener {
      * an die Callback-Methoden eines Listeners weitergegeben. Numpad registriert sich beim Adapter
      * über den entsprechenden Parameter des Konstruktors selbst als einen solchen Listener.
      */
-    private void init(Context context, RecyclerView view) {
-        NumpadAdapter adapter = new NumpadAdapter(context, this);
+    private void init(RecyclerView view) {
+        NumpadAdapter adapter = new NumpadAdapter(this);
         view.setAdapter(adapter);
     }
 
