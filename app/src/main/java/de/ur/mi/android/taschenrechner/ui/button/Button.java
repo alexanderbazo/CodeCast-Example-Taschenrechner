@@ -2,7 +2,7 @@ package de.ur.mi.android.taschenrechner.ui.button;
 
 /*
 @codecast 5. Definition und Repräsentation der Taschenrechnertasten | 1. Button (default)
-@url https://audiobook.software-engineering.education/codecast/05-01-Button.mp3
+@url https://audiobook.software-engineering.education/codecast/05-01-Buttons.mp3
 */
 public enum Button {
     BUTTON_ZERO(ButtonType.NUMBER, "0"),

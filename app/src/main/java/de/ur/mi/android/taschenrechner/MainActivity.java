@@ -9,9 +9,9 @@ import de.ur.mi.android.taschenrechner.ui.display.Display;
 import de.ur.mi.android.taschenrechner.ui.numpad.Numpad;
 
 /*
- @codecast 1. Übersicht | 1. Zweck und Aufbau der Anwendung (intro)
- @url https://audiobook.software-engineering.education/codecast/01-01-Intro.mp3
- */
+@codecast 1. Übersicht | 1. Zweck und Aufbau der Anwendung (intro)
+@url https://audiobook.software-engineering.education/codecast/01-01-Intro.mp3
+*/
 public class MainActivity extends AppCompatActivity implements Numpad.NumpadListener {
 
     /*
