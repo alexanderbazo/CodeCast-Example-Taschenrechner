@@ -1,6 +1,5 @@
 package de.ur.mi.android.taschenrechner.ui.numpad;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import de.ur.mi.android.taschenrechner.R;
 import de.ur.mi.android.taschenrechner.ui.button.Button;
 
+/*
+ * Die Numpad-Klasse: Der Adapter
+ *
+ */
 public class NumpadAdapter extends RecyclerView.Adapter<NumpadButtonViewHolder> implements NumpadButtonViewHolder.OnCLickListener {
 
     public final ButtonListener listener;
