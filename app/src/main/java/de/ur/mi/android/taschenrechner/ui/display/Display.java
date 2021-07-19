@@ -17,8 +17,8 @@ public class Display {
     @url https://audiobook.software-engineering.education/codecast/06-02-Variables.mp3
     */
     private static final String DEFAULT_TERM = "";
-    private TextView termView;
-    private TextView resultView;
+    private final TextView termView;
+    private final TextView resultView;
     private String currentTerm;
 
     public Display(TextView termView, TextView resultView) {

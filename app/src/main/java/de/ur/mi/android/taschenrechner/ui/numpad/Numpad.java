@@ -58,23 +58,15 @@ public class Numpad implements NumpadAdapter.ButtonListener {
         lastButtonPressed = button;
     }
 
-    /*
-     * Listener-Interface zur Weitergabe der verschiedenen Eingabe-Events aus dem Tastenfeld
-     */
     public interface NumpadListener {
-        // Wird aufgerufen, wenn eine Zahl eingegeben wurde
         void onNumberButtonPressed(Button button);
 
-        // Wird aufgerufen, wenn ein Operator eingegeben wurde
         void onOperatorButtonPressed(Button button);
 
-        // Wird aufgerufen, wenn direkt nach einem Operator erneut ein weiterer Operator eingegeben wurde
         void onOperatorButtonOverwritten(Button button);
 
-        // Wird aufgerufen, wenn der Clear-Button (C) gedrückt wurde
         void onClearButtonPressed();
 
-        // Wird aufgerufen, wenn der Result-Button (=) gedrückt wurde
         void onResultButtonPressed();
     }
 }
