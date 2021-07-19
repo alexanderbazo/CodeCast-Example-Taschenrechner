@@ -7,7 +7,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 /*
  * Verwendung der "exp4j"-Bibliothek
  *
- * Diese Klasse dient der vereinfachten Nutzung der "exp4j"-Bibliothek. Über eine öffentliche,
+ * Diese Klasse dient der vereinfachten Nutzung der "exp4j"-Bibliothek. Über eine öffentliche und
  * statische Methode kann ein mathematischer Ausdruck in Form eines Strings übergeben werden.
  * In der Methode wird durch den Einsatz verschiedener "exp4j"-Klassen ein Ergebnis für den im String
  * repräsentierten Ausdruck berechnet, das, falls eine korrekte Auswertung des Ausdrucks möglich war,
@@ -22,13 +22,13 @@ public class CalculatorHelper {
      * Verwendung der "exp4j"-Bibliothek
      *
      * Um über die "exp4j"-Bibliothek ein entsprechendes Ergebnis zu berechnen, sind mehrere Schritte
-     * notwendig, die innerhalb dieser Methode, bzw. in einer weiteren, ausgelagerten Methode der
-     * Klasse, durchgeführt werden.
+     * notwendig, die innerhalb dieser Methode, bzw. in einer weiteren, ausgelagerten und privaten,
+     * Methode der Klasse, durchgeführt werden.
      *
-     * In einem ersten Schritt wird die übergeben Eingabe, d.h. der durch
-     * die Nutzer*innen eingegebene Term, bereinigt. Dadurch wird z.B. sichergestellt, dass kompatible
+     * In einem ersten Schritt wird die übergeben Eingabe, d.h. der durch die Nutzer*innen
+     * eingegebene Term, bereinigt. Dadurch wird z.B. sichergestellt, dass nur kompatible
      * Operatoren verwendet werden. Im nächsten Schritt wird über die Hilfsklasse "ExpressionBuilder",
-     * die Teil der "exp4j"-Bibliothek ist, eine Expression-Instanz, erstellt. Durch Instanzen dieser
+     * die Teil der "exp4j"-Bibliothek ist, eine Expression-Instanz, erstellt. Mit Instanzen dieser
      * Klasse werden in der "exp4j"-Bibliothek mathematische Ausdrücke repräsentiert. Im Anschluss wird
      * versucht, den so generierten Ausdruck aufzulösen. Gelingt dies, wird das Resultat als Ergebnis
      * der Methode zurückgegeben. Schlägt die Berechnung fehl, wird das durch das Abfangen der

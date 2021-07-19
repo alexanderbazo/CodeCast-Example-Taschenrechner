@@ -10,16 +10,16 @@ import de.ur.mi.android.taschenrechner.helper.CalculatorHelper;
  * In dieser Klasse werden alle Funktionen implementiert, die zur Darstellung des von den Nutzer*innen
  * eingegebenen Terms und dessen Ergebnis benötigt werden. Eine Instanz der Klasse wird innerhalb der
  * Activity erstellt. Dabei werden Referenzen auf die beiden benötigten UI-Elemente, zwei TextViews
- * zur Anzeige des eingegebenen Terms und dessen Ergebnis übergeben. Die Display-Klasse greift auf
- * die "CalculatorHelper"-Klasse (und damit indirekt auf die "ex4j"-Bibliothek zu, um aus dem
- * eingegebenen Term das korrekte Ergebnis zu berechnen. Diese Berechnung findet nicht in der Display-
- * Klasse statt, die sich nur um die Verarbeitung der Eingaben bzw. der Darstellung des aktuellen
+ * zur Anzeige des eingegebenen Terms und dessen Ergebnis, übergeben. Die Display-Klasse greift auf
+ * die "CalculatorHelper"-Klasse (und damit indirekt auch auf die "ex4j"-Bibliothek) zu um aus dem
+ * eingegebenen Term das korrekte Ergebnis zu berechnen. Diese Berechnung findet bewusst nicht in der
+ * Display-Klasse statt, die sich nur um die Verarbeitung der Eingaben bzw. der Darstellung des aktuellen
  * Zustands der App kümmert. Die Activity übergibt die eingegebenen Ziffern und Operatoren an die
  * Display-Klasse, die den daraus resultierenden Term in einer Instanzvariable als String zwischen-
  * speichert und nach jeder relevanten Eingabe ein neues Ergebnis berechnen lässt un dieses dann
  * im User Interface darstellt. Gleiches gilt für das Auflösen bzw. Löschen der Term: Erfolgt eine
  * entsprechende Eingabe der Nutzer*innen über das Tastenfeld, wird diese in der Activity abgefangen
- * und an das Display weitergegeben, dass dann Term und angezeigtes Ergebnis entsprechend anpasst.
+ * und an das Display weitergegeben, das dann Term und angezeigtes Ergebnis entsprechend anpasst.
  */
 public class Display {
 
@@ -31,18 +31,18 @@ public class Display {
      * Konstante, in der eine (leere) Zeichenkette gespeichert ist, die als Standardinhalt für
      * die Ausgabe des Display verwendet wird. Solange keine Ziffern oder Operatoren durch die
      * Nutzer*innen eingeben wurden, wird dieser Text angezeigt, der ebenfalls im entsprechenden
-     * View eingetragen wird, wenn die Nutzer*innen den Rechner über die entsprechende Taste zurücksetzen.
-     * In weiteren Variablen werden die beiden UI-Elemente gespeichert, die über den Konstruktor an
-     * die Instanzen der Display-Klasse übergeben werden, und die zur Darstellung des aktuellen Terms
-     * sowie des berechneten Ergebnis verwendet werden. In der Instanzvariable "currentTerm" wird
-     * der aktuelle Term zusätzlich auch als String zwischengespeichert. Alle Änderungen am Term
+     * View eingetragen wird, wenn die Nutzer*innen den Taschenrechner über die entsprechende Taste
+     * zurücksetzen. In weiteren Variablen werden die beiden UI-Elemente gespeichert, die über den
+     * Konstruktor an die Instanzen der Display-Klasse übergeben werden, und die zur Darstellung des
+     * aktuellen Terms sowie des berechneten Ergebnis verwendet werden. In der Instanzvariable "currentTerm"
+     * wird der aktuelle Term zusätzlich auch als String zwischengespeichert. Alle Änderungen am Term
      * sowie die Berechnung des Ergebnis erfolgt immer auf Basis dieser Variable. Deren Inhalt dann
      * auch zur Aktualisierung des entsprechenden TextViews verwendet wird, das stets den aktuell
      * eingegebenen Term darstellen soll.
      */
     private static final String DEFAULT_TERM = "";
-    private TextView termView;
-    private TextView resultView;
+    private final TextView termView;
+    private final TextView resultView;
     private String currentTerm;
 
     public Display(TextView termView, TextView resultView) {
@@ -61,9 +61,10 @@ public class Display {
      * Im Anschluss wird die "update"-Methode aufgerufen, in der das Ergebnis des Terms berechnet und
      * im UI angezeigt wird. Die Auslagerung des zweiten Teils in eine separate Methode erfolgt auch
      * deshalb, da so das Aktualisieren der Anzeige auf Basis des angepassten Terms auch von anderen
-     * Stellen innerhalb der Klasse aufgerufen werden kann. Die Aktualisierung des UIs erfolgt nach
-     * der Eingabe der Nutzer*innen. Daher werden die verschiedenen Formen der Anpassung des Terms
-     * und die allgemeine Berechnung und Darstellung des Ergebnis unabhängig voneinander implementiert.
+     * Stellen innerhalb der Klasse ausgelöst werden kann. Die Aktualisierung des UIs erfolgt nach
+     * der Eingabe der Nutzer*innen. Damit werden die verschiedenen Formen der Anpassung des Terms
+     * und die anschließende, allgemeine Berechnung und Darstellung des Ergebnis unabhängig voneinander
+     * implementiert.
      */
     public void appendTerm(String term) {
         currentTerm = currentTerm.concat(term);
@@ -101,8 +102,8 @@ public class Display {
      * Durch das Betätigen der "="-Taste lösen die Nutzer*innen das endgültige Auflösen des aktuellen
      * Terms aus. Dabei soll, abweichend von den anderen Eingaben, ein angepasste Verhalten des
      * Taschenrechners ausgeführt werden: Wie bei den übrigen Nutzeraktionen soll auch hier das Ergebnis
-     * des aktuellen Terms berechnet und angezeigt werden. Im Anschluss and die Berechnung wird der
-     * aktuell angezeigte Term durch dieses Ergebnis ersetzt. So kann, aufbauend auf dem berechneten Ergebnis,
+     * des aktuellen Terms berechnet und angezeigt werden. Im Anschluss an die Berechnung wird der
+     * aktuell angezeigte Term durch dieses neue Ergebnis ersetzt. So kann, aufbauend auf dem berechneten Ergebnis,
      * ein neuer Rechenausdruck eingeben werden. Das Ergebnis fungiert dabei als erste Zahl des neuen
      * Terms. Auch diese Form der UI-Aktualisierung ist in der generischen "update"-Methode dieser
      * Klasse definiert. Um dieses, vom Standardablauf der Methode abweichenden, Verhalten auszulösen,
@@ -120,22 +121,21 @@ public class Display {
      * der Methode durch die Auswahl des "clearTerm"-Parameters unterschieden werden können.
      *
      * Im Normalfall (für "clearTerm" wird der Wert false übergeben), wird auf Basis des aktuell in
-     * der Variable "currentTerm" gespeicherten Rechenausdrucks dessen Ergebnis berechnet und im
-     * entsprechenden Element des UIs angezeigt. Dazu wird der Term zuerst im TextView "termView",
-     * der stets die aktuellste Fassung des eingegebenen Ausdrucks enthalten soll, angezeigt. Im
-     * Anschluss wird geprüft, ob der aktuelle Term leer ist. Falls dies so ist, entfällt jede weitere
-     * Berechnung und im "resultView", dass stets das aktuelle Ergebnis anzeigen soll, wird ebenfalls
-     * eine leere Zeichenkette eingetragen und die Methode wird durch eine Returnanweisung beendet.
+     * der Variable "currentTerm" gespeicherten Rechenausdrucks dessen Ergebnis berechnet und dieses dann
+     * im entsprechenden Element des UIs angezeigt. Dazu wird der Term zuerst im TextView "termView",
+     * der stets die aktuellste Fassung des eingegebenen Ausdrucks enthalten soll, eingetragen. Im
+     * Anschluss wird geprüft, ob der verwendete Term leer ist. Falls dies so ist, entfällt jede weitere
+     * Berechnung und im "resultView", das stets das aktuelle Ergebnis anzeigen soll, wird ebenfalls
+     * eine leere Zeichenkette eingetragen. Die Methode wird durch eine Return-Anweisung beendet.
      * Befindet sich in der Variable "currentTerm" aber ein Ausdruck, wird zuerst geprüft, ob dieser
      * valide ist, d.h., ob über die Hilfsklasse auf Basis des aktuellen Terms ein Ergebnis berechnet werden
      * kann. Das ist nicht der Fall, wenn als letztes Element des Terms ein Operator eingetragen wurde.
      * Ist das der Fall, wird die Methode beendet, ohne das eine Aktualisierung des in "resultView"
-     * angezeigten Ergebnis erfolgt. Die Fallunterscheidung erfolgt hier, und nicht etwa schon in
-     * den Methoden mit denen die Eingabe von Ziffern und Operatoren verarbeitet wird, da der erste
-     * Teil der update-Methode, das Anzeigen des geänderten Terms, in beiden Fällen erfolgen muss.
-     * Liegt ein valider Term vor, wird dessen Ergebnis berechnet, in dem dieser an die entsprechende
-     * Methode der Hilfsklasse übergeben wird. Deren Rückgabe wird zur Aktualisierung des in "resultView"
-     * angezeigten Texts verwendet.
+     * angezeigten Ergebnis erfolgt. Die Fallunterscheidung erfolgt bewusst hier, und nicht etwa schon in
+     * den Methoden mit denen der Term aktualisiert wird, da der erste Teil der update-Methode, das Anzeigen d
+     * es geänderten Terms, in mehr als einem Fall erfolgen muss. Liegt ein valider Term vor, wird dessen
+     * Ergebnis berechnet, in dem dieser an die entsprechende Methode der Hilfsklasse übergeben wird.
+     * Deren Rückgabe wird zur Aktualisierung des in "resultView" angezeigten Texts verwendet.
      *
      * Falls beim Aufruf der Methode für den Parameter "clearTerm" der Wert true übergeben wird,
      * erfolgt zuletzt eine zusätzliche Änderung des UIs und des von der Klasse verwalteten Terms im

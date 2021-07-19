@@ -8,12 +8,12 @@ package de.ur.mi.android.taschenrechner.ui.button;
  * Adapter-Klasse müssen einzelne Views mit der passenden Beschriftung angezeigt werden. Innerhalb der
  * App müssen dann die jeweils gedrückten Tasten zwischen den Komponenten kommuniziert werden. Die
  * Werte dieses Enums dienen dazu, alle verfügbaren Tasten für diese Zwecke eindeutig zu beschreiben.
- * Für jede mögliche Taste wird dabei ein Typ bzw. eine Kategorie sowie die jeweilige Beschriftung
- * festgehalten. Der Typ dient zur Definition der verschiedenen Arten von Tasten, also der Unterscheidung
+ * Für jede mögliche Taste wird dabei ein Typ bzw. eine Kategorie sowie eine passende Beschriftung
+ * festgehalten. Der Typ dient zur Gruppierung der verschiedenen Arten von Tasten, also der Unterscheidung
  * von Zifferntasten, Tasten zur Eingabe von mathematischen Operatoren und den zusätzlichen Tasten
  * zur Auflösung bzw. zum Zurücksetzten des aktuellen Ausdrucks. Ein Enum eignet sich hier besonders,
- * da dadurch eine fixe Menge an Möglichkeiten definiert werden kann und dabei mit jeder Option
- * zusätzliche Attribute, wie hier z.B. die Tastenbeschriftung, festgehalten werden kann.
+ * da dadurch eine fixe Menge an Möglichkeiten definiert werden kann und  mit jeder Option
+ * zusätzliche Attribute, wie hier z.B. die Tastenbeschriftung, gespeichert werden können.
  */
 public enum Button {
     BUTTON_ZERO(ButtonType.NUMBER, "0"),

@@ -44,21 +44,21 @@ public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements V
      * Die Numpad-Klasse: Verschiende UIs
      *
      * Über die bindButton-Methode wird der ViewHolder aktualisiert. Die Inhalte und die Darstellung
-     * des verwalteten Views werden aktualisiert, um den als Parameter übergebenen Button zu
-     * repräsentieren. In dem konkreten Fall dieser Anwendung wird diese Methode selten aufgerufen,
-     * da sich die Darstellung des Tastenfelds während der Verwendung der App nicht ändert und nur
+     * des verwalteten Views werden aktualisiert, um den als Parameter übergebenen Button im UI
+     * darzustellen. In dieser konkreten Anwendung wird diese Methode vergleichsweise selten aufgerufen,
+     * da sich die Darstellung des Tastenfelds während der Verwendung der App nicht ändern wird und nur
      * Systemereignisse, wie z.B. das Reaktivieren der App aus dem Hintergrund, eine Aktualisierung
-     * des UIs auslösen wird. Das grundsätzliche Prinzip einer öffentlichen Methode im ViewHolder,
-     * der ein Datenobjekt als Parameter übergeben wird und in der der Zustand dieses Objekts in die
-     * entsprechenden Elemente des Views übertragen wird, eignet sich besonders gut für solche
-     * (Recycler-) Views, deren Inhalte dynamisch angepasst werden.
+     * des UIs und damit einen Aufruf dieser Methode auslösen werden. Das grundsätzliche Prinzip einer
+     * öffentlichen Methode im ViewHolder, der ein Datenobjekt als Parameter übergeben wird und in der
+     * der Zustand dieses Objekts in die entsprechenden Elemente des Views übertragen wird, eignet sich
+     * besonders gut für solche (Recycler-) Views, deren Inhalte dynamisch angepasst werden.
      *
-     * Eine Besonderheit dieses ViewHolder ist die unterschiedliche Darstellung verschiedener Tasten.
-     * Über den Type des übergebenen Buttons werden Ziffer, Operatoren und andere Befehle unterschieden.
-     * Für die Zifferntasten bleibt der View unverändert, d.h. das im Konstruktor übergebene View
+     * Ein Feature dieses ViewHolder ist die Möglichkeit zur unterschiedlichen Darstellung verschiedener
+     * Arten von Tasten. Über den Typ des übergebenen Buttons werden Ziffer, Operatoren und andere Befehle
+     * unterschieden. Für Zifferntasten bleibt der View unverändert, d.h. das im Konstruktor übergebene View
      * wird in der Darstellung nicht angepasst. Für die übrigen Kategorien wird die Hintergrundgrafik
      * des Buttons angepasst. Dafür stehen in den Ressourcen zwei Vektorgrafiken mit jeweils unter-
-     * schiedlicher Hintergrundfarbe bereit, die heir ausgewählt und als Hintergrund des Buttons
+     * schiedlicher Hintergrundfarbe bereit, die hier ausgewählt und als Hintergrund des Buttons
      * gesetzt werden. In allen Fällen wir die im Button-Parameter übergebene Beschriftung ("label")
      * verwendet, um den auf dem Button angezeigten Text anzupassen.
      */
