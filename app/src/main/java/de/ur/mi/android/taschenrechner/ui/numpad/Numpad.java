@@ -5,17 +5,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import de.ur.mi.android.taschenrechner.ui.button.Button;
 import de.ur.mi.android.taschenrechner.ui.button.ButtonType;
 
-/**
- * Diese Klasse verwaltet bzw. repräsentiert das Tastenfeld des Taschenrechners. Es initialisiert
- * den notwendigen Adapter für die korrekte Verwendung des übergebenen RecyclerViews, fängt die Events
- * ab, die der Adapter aussendet, wenn einzelne Buttons des Tastenfelds betätigt werden und wandelt
- * diese anhand des Typs der Button und des zuvor gedrückten Buttons in aussagekräftigere Events um,
- * die an einen angeschlossenen Listener (wird im Konstruktor gesetzt) weitergegeben werden.
- */
+/*
+@codecast 7. Die Numpad-Klasse | 1. Funktion und Aufbau (default)
+@url https://audiobook.software-engineering.education/codecast/07-01-Overview.mp3
+*/
 public class Numpad implements NumpadAdapter.ButtonListener {
 
-    // Zwischenspeicher für den zuletzt betätigten Button: Wird verwendet, um zu identifizieren, ob
-    // direkt nacheinander zwei Operatoren eingegeben wurden.
     private Button lastButtonPressed;
     private final NumpadListener listener;
 
@@ -24,47 +19,35 @@ public class Numpad implements NumpadAdapter.ButtonListener {
         init(view);
     }
 
-    /*
-     * Initialisiert den Adapter und verbindet diesen mit dem RecyclerView um die Darstellung
-     * des Tastenfelds zu ermöglichen. Das Drücken einzelner Tasten wird im Adapter festgestellt und
-     * an die Callback-Methoden eines Listeners weitergegeben. Numpad registriert sich beim Adapter
-     * über den entsprechenden Parameter des Konstruktors selbst als einen solchen Listener.
-     */
     private void init(RecyclerView view) {
         NumpadAdapter adapter = new NumpadAdapter(this);
         view.setAdapter(adapter);
     }
 
     /*
-     * Wird vom Adapter aufgerufen (Callback-Methode des Listeners) wenn einer der Buttons des
-     * Tastenfelds gedrückt wurde. Die Methode prüft, welche Taste gedrückt wurde und informiert
-     * den angeschlossenen Listener durch den Aufruf der entsprechenden Callback-Methode
-     */
+    @codecast 7. Die Numpad-Klasse | 2. Verarbeiten der Klick-Events (default)
+    @url https://audiobook.software-engineering.education/codecast/07-02-Events.mp3
+    */
     @Override
     public void onButtonPressed(Button button) {
         switch (button.type) {
-            // Eingabe einer Ziffer
             case NUMBER:
                 listener.onNumberButtonPressed(button);
                 break;
-            // Eingabe eines Operators
             case OPERATOR:
                 if (lastButtonPressed == null) {
                     listener.onOperatorButtonPressed(button);
                 } else if (lastButtonPressed.type != ButtonType.OPERATOR) {
                     listener.onOperatorButtonPressed(button);
-                // Handling des Falls, dass direkt nacheinander zwei Operatoren eingegeben wurden
                 } else {
                     listener.onOperatorButtonOverwritten(button);
                 }
                 break;
             case COMMAND:
-                // Drücken des Clear-Buttons
                 if (button == Button.BUTTON_DELETE) {
                     listener.onClearButtonPressed();
                     break;
                 }
-                // Drücken des Result-Buttons
                 if (button == Button.BUTTON_RESULT) {
                     listener.onResultButtonPressed();
                     break;
@@ -72,8 +55,6 @@ public class Numpad implements NumpadAdapter.ButtonListener {
             default:
                 break;
         }
-        // Speichern des gedrückten Buttons um bei der nächsten Eingabe zu Prüfen ob zwei Operatoren
-        // nacheinander eingegeben wurden
         lastButtonPressed = button;
     }
 

@@ -11,6 +11,10 @@ import de.ur.mi.android.taschenrechner.R;
 import de.ur.mi.android.taschenrechner.ui.button.Button;
 import de.ur.mi.android.taschenrechner.ui.button.ButtonType;
 
+/*
+@codecast 7. Die Numpad-Klasse | 4. Der ViewHolder (default)
+@url https://audiobook.software-engineering.education/codecast/07-04-ViewHolder.mp3
+*/
 public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public final android.widget.Button inputButton;
@@ -25,10 +29,11 @@ public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements V
         this.inputButton.setOnClickListener(this);
     }
 
+    /*
+    @codecast 7. Die Numpad-Klasse | 5. Buttons unterschiedlich darstellen (default)
+    @url https://audiobook.software-engineering.education/codecast/07-05-Button-Design.mp3
+    */
     public void bindButton(Button button) {
-        // "Normale" Buttons (Ziffern) werden mit einem Button in Standardfarbe angezeigt. Für alle
-        // anderen Typen wird der Hintergrund des Buttons angepasst, in dem ein anderes Drawable,
-        // hier auf Basis einer Shape-Datei (XML) ausgewählt und als Background-Eigenschaft gesetzt wird.
         if (button.type == ButtonType.OPERATOR) {
             inputButton.setBackground(AppCompatResources.getDrawable(context, R.drawable.operator_button_shape));
         }
