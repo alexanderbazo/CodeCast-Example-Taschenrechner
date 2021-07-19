@@ -9,6 +9,12 @@ import de.ur.mi.android.taschenrechner.ui.display.Display;
 import de.ur.mi.android.taschenrechner.ui.numpad.Numpad;
 
 /*
+@codecast-info In diesem CodeCast erhalten Sie Informationen zum Software Design unserers Lösungsvorschlags
+zur Übungsaufabe "Taschenrechner". Die Audiokommentare wurden von Alexander Bazo eingesprochen. Bei inhaltlichen
+Fragen wenden Sie sich bitte über den Discord-Server an uns.
+ */
+
+/*
 @codecast 1. Übersicht | 1. Zweck und Aufbau der Anwendung (intro)
 @url https://audiobook.software-engineering.education/codecast/01-01-Intro.mp3
 */
