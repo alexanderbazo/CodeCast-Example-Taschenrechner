@@ -16,20 +16,20 @@ Fragen wenden Sie sich bitte über den Discord-Server an uns.
 
 /*
 @codecast 1. Übersicht | 1. Zweck und Aufbau der Anwendung (intro)
-@url https://audiobook.software-engineering.education/codecast/01-01-Intro.mp3
+@url https://www.tobiasdollhofer.de/taschenrechner/01-01-Intro.mp3
 */
 public class MainActivity extends AppCompatActivity implements Numpad.NumpadListener {
 
     /*
      @codecast 1. Übersicht | 2. Die zentrale Activity und die übrigen Komponenten (intro)
-     @url https://audiobook.software-engineering.education/codecast/01-02-Activity.mp3
+     @url https://www.tobiasdollhofer.de/taschenrechner/01-02-Activity.mp3
      */
     private Numpad numpad;
     private Display display;
 
     /*
      @codecast 2. Initialisierung der App | 1. Start der Initialisierung (default)
-     @url https://audiobook.software-engineering.education/codecast/02-01-OnCreate.mp3
+     @url https://www.tobiasdollhofer.de/taschenrechner/02-01-OnCreate.mp3
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
 
     /*
     @codecast 2. Initialisierung der App | 2. Initialisierung der UI-Klassen (default)
-    @url https://audiobook.software-engineering.education/codecast/02-02-UI-Klassen.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/02-02-UI-Klassen.mp3
     */
     private void initUI() {
         setContentView(R.layout.activity_main);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
 
     /*
     @codecast 3. Handling der Eingabe-Events | 1. Eingabe von Ziffern (default)
-    @url https://audiobook.software-engineering.education/codecast/03-01-Numbers.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/03-01-Numbers.mp3
     */
     @Override
     public void onNumberButtonPressed(Button button) {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
 
     /*
     @codecast 3. Handling der Eingabe-Events | 2. Eingabe von Operatoren (default)
-    @url https://audiobook.software-engineering.education/codecast/03-02-Operators.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/03-02-Operators.mp3
     */
     @Override
     public void onOperatorButtonPressed(Button button) {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
 
     /*
     @codecast 3. Handling der Eingabe-Events | 3. Überschreiben von Operatoren (default)
-    @url https://audiobook.software-engineering.education/codecast/03-03-Override.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/03-03-Override.mp3
    */
     @Override
     public void onOperatorButtonOverwritten(Button button) {
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
 
     /*
     @codecast 3. Handling der Eingabe-Events | 4. Zurücksetzten des UIs (default)
-    @url https://audiobook.software-engineering.education/codecast/03-04-Clear.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/03-04-Clear.mp3
     */
     @Override
     public void onClearButtonPressed() {
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
 
     /*
     @codecast 3. Handling der Eingabe-Events | 5. Auflösen des Ausdrucks (default)
-    @url https://audiobook.software-engineering.education/codecast/03-05-Results.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/03-05-Results.mp3
     */
     @Override
     public void onResultButtonPressed() {

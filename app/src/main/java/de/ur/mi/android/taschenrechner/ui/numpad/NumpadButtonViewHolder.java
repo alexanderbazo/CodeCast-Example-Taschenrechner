@@ -13,7 +13,7 @@ import de.ur.mi.android.taschenrechner.ui.button.ButtonType;
 
 /*
 @codecast 7. Die Numpad-Klasse | 4. Der ViewHolder (default)
-@url https://audiobook.software-engineering.education/codecast/07-04-ViewHolder.mp3
+@url https://www.tobiasdollhofer.de/taschenrechner/07-04-ViewHolder.mp3
 */
 public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -31,7 +31,7 @@ public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements V
 
     /*
     @codecast 7. Die Numpad-Klasse | 5. Buttons unterschiedlich darstellen (default)
-    @url https://audiobook.software-engineering.education/codecast/07-05-Button-Design.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/07-05-Button-Design.mp3
     */
     public void bindButton(Button button) {
         if (button.type == ButtonType.OPERATOR) {

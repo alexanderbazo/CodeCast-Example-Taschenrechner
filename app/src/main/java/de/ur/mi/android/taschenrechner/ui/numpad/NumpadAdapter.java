@@ -12,7 +12,7 @@ import de.ur.mi.android.taschenrechner.ui.button.Button;
 
 /*
 @codecast 7. Die Numpad-Klasse | 3. Der Adapter (default)
-@url https://audiobook.software-engineering.education/codecast/07-03-Adapter.mp3
+@url https://www.tobiasdollhofer.de/taschenrechner/07-03-Adapter.mp3
 */
 public class NumpadAdapter extends RecyclerView.Adapter<NumpadButtonViewHolder> implements NumpadButtonViewHolder.OnCLickListener {
 

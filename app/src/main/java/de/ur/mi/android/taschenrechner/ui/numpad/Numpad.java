@@ -7,7 +7,7 @@ import de.ur.mi.android.taschenrechner.ui.button.ButtonType;
 
 /*
 @codecast 7. Die Numpad-Klasse | 1. Funktion und Aufbau (default)
-@url https://audiobook.software-engineering.education/codecast/07-01-Overview.mp3
+@url https://www.tobiasdollhofer.de/taschenrechner/07-01-Overview.mp3
 */
 public class Numpad implements NumpadAdapter.ButtonListener {
 
@@ -26,7 +26,7 @@ public class Numpad implements NumpadAdapter.ButtonListener {
 
     /*
     @codecast 7. Die Numpad-Klasse | 2. Verarbeiten der Klick-Events (default)
-    @url https://audiobook.software-engineering.education/codecast/07-02-Events.mp3
+    @url https://www.tobiasdollhofer.de/taschenrechner/07-02-Events.mp3
     */
     @Override
     public void onButtonPressed(Button button) {
