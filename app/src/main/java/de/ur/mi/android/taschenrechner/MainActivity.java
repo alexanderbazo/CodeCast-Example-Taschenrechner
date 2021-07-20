@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity implements Numpad.NumpadList
     /*
      * Handling der Eingabe-Events aus der Numpad-Klasse
      *
-     * Diese Methode wird automatisch aufgerufen, wenn innerhalb des Numpads bemerkt wurde, dass die
-     * Nutzer*innen einer der Buttons betätigt wurde, über den neue Ziffer eingegeben werden können.
+     * Diese Methode wird automatisch aufgerufen, wenn innerhalb des Numpads bemerkt wurde, dass durch
+     * die Nutzer*innen einer der Buttons betätigt wurde, über den neue Ziffer eingegeben werden können.
      * Die Numpad-Klasse kommuniziert die jeweils gedrückte Schaltfläche über die Übergabe des
-     * korrespondierenden Enum-Werts als Metodenparameter. Die Activity gibt diese Eingabe an die
+     * korrespondierenden Enum-Werts als Methodenparameter. Die Activity gibt diese Eingabe an die
      * Display-Klasse weiter und wählt dazu das Label, d.h. die auf dem Button dargestellte Ziffer,
      * aus. Im Display wird die Ziffer zur Aktualisierung des aktuellen Terms, zur Berechnung des
      * neuen Ergebnis und zur Darstellung dieser beiden Inhalte verwendet.

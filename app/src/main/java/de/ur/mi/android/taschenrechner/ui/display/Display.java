@@ -16,8 +16,8 @@ import de.ur.mi.android.taschenrechner.helper.CalculatorHelper;
  * Display-Klasse statt, die sich nur um die Verarbeitung der Eingaben bzw. der Darstellung des aktuellen
  * Zustands der App kümmert. Die Activity übergibt die eingegebenen Ziffern und Operatoren an die
  * Display-Klasse, die den daraus resultierenden Term in einer Instanzvariable als String zwischen-
- * speichert und nach jeder relevanten Eingabe ein neues Ergebnis berechnen lässt un dieses dann
- * im User Interface darstellt. Gleiches gilt für das Auflösen bzw. Löschen der Term: Erfolgt eine
+ * speichert und nach jeder relevanten Eingabe ein neues Ergebnis berechnen lässt und dieses dann
+ * im User Interface darstellt. Gleiches gilt für das Auflösen bzw. Löschen des Terms: Erfolgt eine
  * entsprechende Eingabe der Nutzer*innen über das Tastenfeld, wird diese in der Activity abgefangen
  * und an das Display weitergegeben, das dann Term und angezeigtes Ergebnis entsprechend anpasst.
  */
@@ -130,10 +130,10 @@ public class Display {
      * Befindet sich in der Variable "currentTerm" aber ein Ausdruck, wird zuerst geprüft, ob dieser
      * valide ist, d.h., ob über die Hilfsklasse auf Basis des aktuellen Terms ein Ergebnis berechnet werden
      * kann. Das ist nicht der Fall, wenn als letztes Element des Terms ein Operator eingetragen wurde.
-     * Ist das der Fall, wird die Methode beendet, ohne das eine Aktualisierung des in "resultView"
+     * Ist das der Fall, wird die Methode beendet, ohne dass eine Aktualisierung des in "resultView"
      * angezeigten Ergebnis erfolgt. Die Fallunterscheidung erfolgt bewusst hier, und nicht etwa schon in
-     * den Methoden mit denen der Term aktualisiert wird, da der erste Teil der update-Methode, das Anzeigen d
-     * es geänderten Terms, in mehr als einem Fall erfolgen muss. Liegt ein valider Term vor, wird dessen
+     * den Methoden, mit denen der Term aktualisiert wird, da der erste Teil der update-Methode, das Anzeigen
+     * des geänderten Terms, in mehr als einem Fall erfolgen muss. Liegt ein valider Term vor, wird dessen
      * Ergebnis berechnet, in dem dieser an die entsprechende Methode der Hilfsklasse übergeben wird.
      * Deren Rückgabe wird zur Aktualisierung des in "resultView" angezeigten Texts verwendet.
      *

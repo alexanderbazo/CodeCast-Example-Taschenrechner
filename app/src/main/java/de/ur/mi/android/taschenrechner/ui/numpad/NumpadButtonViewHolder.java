@@ -41,7 +41,7 @@ public class NumpadButtonViewHolder extends RecyclerView.ViewHolder implements V
     }
 
     /*
-     * Die Numpad-Klasse: Verschiende UIs
+     * Die Numpad-Klasse: Verschiedene UIs
      *
      * Über die bindButton-Methode wird der ViewHolder aktualisiert. Die Inhalte und die Darstellung
      * des verwalteten Views werden aktualisiert, um den als Parameter übergebenen Button im UI

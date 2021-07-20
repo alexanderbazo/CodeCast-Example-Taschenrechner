@@ -15,7 +15,7 @@ import de.ur.mi.android.taschenrechner.ui.button.ButtonType;
  * benötigten Adapter, über den die Inhalte für das RecyclerView bereitgestellt werden. Über eine
  * Listener-Schnittstelle zwischen Adapter und Numpad-Klasse werden die Klicks auf die Buttons
  * weitergegeben und abgefangen. Die Numpad-Klasse fungiert dabei als Listener und implementiert
- * dafür das Interface, das innerhalb de Adapter-Klasse definiert wird. Der Adapter kommuniziert  alle
+ * dafür das Interface, das innerhalb der Adapter-Klasse definiert wird. Der Adapter kommuniziert  alle
  * Tastendrücke über die gleiche Callback-Methode und übergibt die gedrückte Taste, in Form
  * eines Wertes aus dem Button-Enum, als Parameter. Die Numpad-Klasse verarbeitet das Event, stellt
  * fest, welche Art von Taste gedrückt wurde und gibt diese Information dann in Form spezifischerer
@@ -49,10 +49,10 @@ public class Numpad implements NumpadAdapter.ButtonListener {
      * Buttons bewusst ein weiteres Enum (ButtonType) verwendet wurde, dessen Werte einfach als Cases
      * innerhalb der switch-Anweisung verwendet werden können. Im Falle eines ausgewählten Operators wird
      * dabei zusätzlich geprüft, ob auch die zuletzt gedrückte Taste einen Operator darstellt. Zu diesem
-     * Zweck wird die jeweils zu letzt betätigte Taste in einer Instanzvariable (lastButtonPressed)
+     * Zweck wird die jeweils zuletzt betätigte Taste in einer Instanzvariable (lastButtonPressed)
      * zwischengespeichert. Über diesen Mechanismus kann die Numpad-Klasse die angeschlossene Activity,
      * die hier als NumpadListener fungiert, präzise über die Intention der Nutzer*innen bzw. die
-     * Art des Eingabe-Events informieren. Diesen Information wird dabei über den Aufruf der
+     * Art des Eingabe-Events informieren. Diese Information wird dabei über den Aufruf der
      * verschiedenen Interface- bzw. Callback-Methoden weitergegeben. So kann innerhalb der Activity
      * leicht zwischen "normalen" Ziffern-Tasten, dem Hinzufügen oder Überschreiben von Operatoren
      * und der Auswahl der restlichen Funktionen unterschieden werden.
